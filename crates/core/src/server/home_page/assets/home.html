@@ -23,11 +23,34 @@
         </div>
         <div class="header-right">
             <span class="uptime">Up {uptime}</span>
+            <button class="theme-btn" id="web70-preview-btn" onclick="document.getElementById('web70-modal').removeAttribute('hidden')" title="Web 7.0 — Prossimamente" style="font-size:1.2em;padding:4px 8px;">🔍</button>
             <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Toggle dark/light mode">
                 <span id="theme-icon">☀️</span>
             </button>
         </div>
     </header>
+
+    <!-- Web 7.0 "coming soon" modal -->
+    <div id="web70-modal" hidden style="position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;" onclick="if(event.target===this)this.setAttribute('hidden','')">
+      <div style="background:#0d1117;border:1px solid #30363d;border-radius:12px;max-width:420px;width:100%;padding:28px 24px;color:#e6edf3;font-family:sans-serif;box-shadow:0 8px 32px #000a;">
+        <div style="font-size:2.4em;text-align:center;margin-bottom:8px;">🌐</div>
+        <h2 style="margin:0 0 6px;text-align:center;font-size:1.3em;color:#58a6ff;">Prossimamente</h2>
+        <p style="text-align:center;color:#8b949e;margin:0 0 20px;font-size:.95em;line-height:1.5">
+          <strong style="color:#e6edf3">Web 7.0</strong> — Social decentralizzato su Freenet.<br>
+          Browser · FreenetTV · FreenetGram · FreenetPosts
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px">
+          <a href="/v1/contract/web/browser-fn/" style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;text-align:center;text-decoration:none;color:#58a6ff;font-size:.85em">🌐 Browser</a>
+          <a href="/v1/contract/web/fresnettv/" style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;text-align:center;text-decoration:none;color:#58a6ff;font-size:.85em">📺 FreenetTV</a>
+          <a href="/v1/contract/web/frenetgram/" style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;text-align:center;text-decoration:none;color:#58a6ff;font-size:.85em">📷 FreenetGram</a>
+          <a href="/v1/contract/web/freenetposts/" style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;text-align:center;text-decoration:none;color:#58a6ff;font-size:.85em">📝 FreenetPosts</a>
+        </div>
+        <p style="text-align:center;margin:0 0 16px;font-size:.8em;color:#6e7681">
+          <a href="https://github.com/blue-terminal/web.7.0" target="_blank" rel="noopener noreferrer" style="color:#8b949e">github.com/blue-terminal/web.7.0</a>
+        </p>
+        <button onclick="document.getElementById('web70-modal').setAttribute('hidden','')" style="width:100%;background:#21262d;border:1px solid #30363d;color:#e6edf3;border-radius:6px;padding:8px;cursor:pointer;font-size:.9em">Chiudi</button>
+      </div>
+    </div>
 
     <div class="version-banner" id="version-mismatch-banner" data-asset-version="{asset_version}" role="alert" hidden></div>
 
